@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Roboto+Mono:wght@100&display=swap"rel="stylesheet">
+    <style>
+      .logo {
+        font-family: 'Barlow', sans-serif;
+        font-size: 3em;
+        color: #fff;
+        background-color: #20222c;
+        padding: 10px 20px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Draw&Share</div>
+  </body>
+</html>
+<style>
+      .share-button {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        background-image: url('https://gmk6cc.p3cdn1.secureserver.net/wp-content/uploads/2013/08/white-wood-wall-texture-wallpaper.jpg');
+        background-size: cover;
+        color: #000;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 50px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .share-button:hover {
+        color: #00f;
+      }
+      
+      .share-button-popup {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2em;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 30px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        display: none;
+      }
+      
+      .share-button:hover .share-button-popup {
+        display: block;
+      }
+      
+      .email-button {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        background-color: #00f;
+        color: #fff;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 30px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      
+      .email-button:hover {
+        background-color: #fff;
+        color: #00f;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="share-button">
+      Share
+      <div class="share-button-popup">
+        Click to share via email
+        <br>
+        <a href="mailto:?subject=Look at my art!"> 
+          <div class="email-button">
+            Email
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
+<style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mousemove', draw);
+
+      function startDrawing(e) {
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        isDrawing = true;
+      }
+
+      function stopDrawing() {
+        ctx.closePath();
+        isDrawing = false;
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+      }
+    </script>
+<style>
+      body {
+        background-image: url('');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="background-image">Background Image URL:</label>
+    <br>
+    <input type="text" id="background-image" name="background-image">
+    <br>
+    <button onclick="document.body.style.backgroundImage = 'url(' + document.getElementById('background-image').value + ')';">Set Background Image</button>
+    <!-- Your content goes here -->
+  </body>
+</html>
